@@ -1,7 +1,7 @@
 // import packages, models, and helpers
 const router = require('express').Router();
 const {Comment, Post, User} = require('../models');
-const loggedIn = require('../utils/helpers');
+const loggedIn = require('../utils/auth');
 
 // GET homepage
 router.get('/', async (req, res) => {
