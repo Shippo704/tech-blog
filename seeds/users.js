@@ -30,7 +30,7 @@ const users = [
     }
 ];
 
-// function to seed the table
+// function to seed the user table
 const seedUsers = () => User.bulkCreate(users);
 
 // export the seed function
