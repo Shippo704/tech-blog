@@ -5,6 +5,7 @@ const logoutHandler = async () => {
         headers: {'Content-Type': 'application/json'}
     });
 
+    // return to homepage on successful logout
     if (response.ok) {
         document.location.replace('./');
     }

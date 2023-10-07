@@ -5,6 +5,7 @@ const loginFormHandler = async (event) => {
     const username = document.querySelector('#username').value.trim();
     const password = document.querySelector('#password').value.trim();
 
+    // makes sure all fields are filled in
     if (username && password) {
         const response = await fetch('/login', {
             method: 'POST',
@@ -12,6 +13,7 @@ const loginFormHandler = async (event) => {
             headers: {'Content-Type': 'application/json'}
         });
 
+        // return to homepage on successful login
         if (response.ok) {
             document.location.replace('/');
         }
