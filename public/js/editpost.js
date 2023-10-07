@@ -1,8 +1,5 @@
 // get post id from endpoint params
-const postId = window.location.toString.split('/')[
-    // post id is the last item after a slash
-    window.location.toString.split('/').length-1
-];
+const postId = parseInt(window.location.pathname.split('/').pop());
 
 // update post function
 const updatePostFormHandler = async (event) => {
@@ -13,7 +10,7 @@ const updatePostFormHandler = async (event) => {
 
     // makes sure all fields have been filled
     if (title && content) {
-        const response = await fetch(`/api/posts/${post_id}`, {
+        const response = await fetch(`/api/posts/${postId}`, {
             method: 'PUT',
             body: JSON.stringify({title, content}),
             headers: {'Content-Type': 'application/json'}
