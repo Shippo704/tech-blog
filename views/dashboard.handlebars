@@ -1,0 +1,18 @@
+<main>
+    <div class="row">
+        <div class="col-12">
+            <h1>Dashboard</h1>
+            <a href="/newpost" class="btn">Create New Post</a>
+        </div>
+    </div>
+
+    <h1>My Posts:</h1>
+    {{#each posts}}
+        <div class="post">
+            <h2><a href="/post/{{id}}">{{title}}</a></h2>
+            <p>Created By: {{user.username}} at {{createdAt}}</p>
+            <a href="editpost/{{id}}" class="btn">Edit Post</a>
+            <button class="btn" postId="{{id}}">Delete</button>
+        </div>
+    {{/each}}
+</main>
