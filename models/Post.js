@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 class Post extends Model {};
 
 Post.init(
+    // attributes
     {
         id: {
             type: DataTypes.INTEGER,
@@ -19,10 +20,13 @@ Post.init(
         content: {
             type: DataTypes.TEXT,
             allowNull: false,
+            // minimum length requirement
+            // post can't be empty
             validate: {
                 len: [1]
             }
         },
+        // FOREIGN KEY
         user_id: {
             type: DataTypes.INTEGER,
             references: {

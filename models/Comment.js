@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 class Comment extends Model {};
 
 Comment.init (
+    // attributes
     {
         id: {
             type: DataTypes.INTEGER,
@@ -14,10 +15,13 @@ Comment.init (
         content: {
             type: DataTypes.STRING,
             allowNull: false,
+            // minimum length requirement
+            // comment can't be empty
             validate: {
                 len: [1]
             }
         },
+        // FOREIGN KEY
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -26,6 +30,7 @@ Comment.init (
                 key: 'id'
             }
         },
+        // FOREIGN KEY
         post_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
