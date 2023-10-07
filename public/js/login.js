@@ -1,3 +1,4 @@
+// login function to log in user and return to homepage
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -20,6 +21,7 @@ const loginFormHandler = async (event) => {
     }
 };
 
+// add event listener to login form submit button
 document
 .querySelector('loginForm')
 .addEventListener('sumbit', loginFormHandler);
