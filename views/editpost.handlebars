@@ -1,11 +1,14 @@
 <main>
     <h1>Edit Post</h1>
     <form class="editForm">
-        <label for="edit-title" class="label">Title: </label>
-        <input id="edit-title" type="text" placeholder="Title" value="{{title}}">
-        <label for="edit-content" class="label">Content: </label>
-        <textarea id="edit-content" rows="3" placeholder="Enter text...">{{content}}</textarea>
-        <button type="submit" id="update-post" class="btn">Update Post</button>
-        <button type="submit" id="delete-post" class="btn">Delete Post</button>
+        <label for="edit-title" class="label m-2">Title: </label>
+        <input id="edit-title" class="m-2" type="text" placeholder="Title" value="{{title}}">
+        <label for="edit-content" class="label m-2">Content: </label>
+        <textarea id="edit-content" class="m-2" rows="3" placeholder="Enter text...">{{content}}</textarea>
+        <div class="m-4 d-flex justify-content-center">
+            <button type="submit" id="update-post" class="btn nav text-light">Update Post</button>
+            <button type="submit" id="delete-post" class="btn nav text-light">Delete Post</button>
+        </div>
+        
     </form>
 </main>

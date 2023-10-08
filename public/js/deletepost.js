@@ -8,8 +8,10 @@ const postId = window.location.toString.split('/')[
 const deletePostFormHandler = async (event) => {
     event.preventDefault();
 
-    const response = await fetch(`/api/posts/${post_id}`, {
-        method: 'DELETE'
+    const response = await fetch(`/api/posts/${postId}`, {
+        method: 'DELETE',
+        body: JSON.stringify({post_id: postId}),
+        headers: { 'Content-Type': 'application/json' },
     });
 
     // return to homepage if delete is successful
@@ -24,4 +26,4 @@ const deletePostFormHandler = async (event) => {
 // add event listener for delete post button
 document
 .querySelector('#delete-post')
-.addEventListener('submit', deletePostFormHandler);
+.addEventListener('click', deletePostFormHandler);

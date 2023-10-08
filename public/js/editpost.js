@@ -1,5 +1,6 @@
 // get post id from endpoint params
 const postId = parseInt(window.location.pathname.split('/').pop());
+console.log(postId);
 
 // update post function
 const updatePostFormHandler = async (event) => {
@@ -13,7 +14,7 @@ const updatePostFormHandler = async (event) => {
         const response = await fetch(`/api/posts/${postId}`, {
             method: 'PUT',
             body: JSON.stringify({title, content}),
-            headers: {'Content-Type': 'application/json'}
+            headers: { 'Content-Type': 'application/json' },
         });
 
         // return to homepage if update is successful
@@ -29,4 +30,4 @@ const updatePostFormHandler = async (event) => {
 // add event listener to update button
 document
 .querySelector('#update-post')
-.addEventListener('submit', updatePostFormHandler);
+.addEventListener('click', updatePostFormHandler);
