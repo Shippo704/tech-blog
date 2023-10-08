@@ -1,12 +1,12 @@
 <main class="">
-    <h1 class="">Tech Blog Posts</h1>
+    <h1 class="d-flex justify-content-center">Tech Blog Posts</h1>
     <div class="row">
         {{#each posts}}
-        <div class="col-md-4">
+        <div class="col-md-3 m-4">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-center">
                     <h2 class="card-title"></h2>
-                    <a href="/post/{{id}}" class="">{{title}}</a>
+                    <a href="/post/{{id}}" class="title btn text-dark">{{title}}</a>
                 </div>
 
                 <div class="card-body">

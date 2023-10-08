@@ -1,4 +1,8 @@
-a:hover{
+.nav:hover{
     background-color: #60B;
     color: aliceblue;
+}
+
+.title:hover {
+    border: 2px solid #60B;
 }
