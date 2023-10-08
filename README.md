@@ -20,9 +20,13 @@ This is a mock-up of what could be a blogging website. Users can create accounts
 ## Installation
 
 Clone the repository and run "npm install". 
+
 Set up a .env file with SESSION_SECRET, DB_NAME, DB_USER, and DB_PASSWORD.
+
 Use sql and run the db/schema.sql file.
+
 Run "npm seed".
+
 Finally, run the app with either "node server.js" or "npm start".
 
 ## Usage
