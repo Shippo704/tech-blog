@@ -1,7 +1,7 @@
 <main>
     <div>
         <h1>{{title}}</h1>
-        <p>Created By: {{user.username}} at {{createdAt}}</p>
+        <p>Created By: {{user.username}} at {{format_date createdAt}}</p>
         <p>{{content}}</p>
     </div>
 
@@ -18,7 +18,7 @@
     {{#each comments}}
     <div class="comment">
         <p>{{content}}</p>
-        <p>By: {{user.username}} at {{createAt}}</p>
+        <p>By: {{user.username}} at {{format_date createAt}}</p>
     </div>
     {{/each}}
 
