@@ -71,7 +71,7 @@ router.get('/login', (req, res) => {
 });
 
 // GET signup page
-router.get('./signup', (req, res) => {
+router.get('/signup', (req, res) => {
     // render signup page
     res.render('signup', {
         logged_in: req.session.logged_in

@@ -1,7 +1,6 @@
 // import required packages and modules
 const router = require('express').Router();
 const {Comment, Post, User} = require('../../models');
-const { update } = require('../../models/Comment');
 const loggedIn = require('../../utils/auth');
 
 // GET all posts from a user
