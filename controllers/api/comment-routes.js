@@ -9,9 +9,9 @@ router.post('/', loggedIn, async (req, res) => {
         // create a new comment with req body data
         const comment = await Comment.create({
             content: req.body.content,
-            post_id: req.body.post_id,
             // user_id is the logged in user's id
-            user_id: req.session.user_id
+            user_id: req.session.user_id,
+            post_id: req.body.post_id,
         });
 
         // comment created successfully
@@ -24,7 +24,7 @@ router.post('/', loggedIn, async (req, res) => {
 });
 
 // DELETE/DESTROY a comment
-router.delete('./:id', loggedIn, async (req, res) => {
+router.delete('/:id', loggedIn, async (req, res) => {
     try {
         // delete comment that matches params id
         const deleteComment = await Comment.destroy({
