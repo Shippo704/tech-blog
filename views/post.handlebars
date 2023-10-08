@@ -1,24 +1,32 @@
 <main>
     <div>
-        <h1>{{title}}</h1>
-        <p>Created By: {{user.username}} at {{format_date createdAt}}</p>
-        <p>{{content}}</p>
+        <h1 class="d-flex justify-content-center">{{title}}</h1>
+        <div class="m-4 d-flex justify-content-center">
+            <p>Created By: {{user.username}} at {{format_date createdAt}}</p>
+        </div>   
+        <div class="m-4 d-flex justify-content-center">
+            <p>{{content}}</p>
+        </div>
     </div>
 
     {{#if loggedIn}}
     <form class="comment-form">
-        <label for="new-comment">Add Comment: </label>
-        <textarea id="new-comment" rows="2" placeholder="Add a comment">
+        <label for="new-comment" class="m-2">Add Comment: </label>
+        <textarea id="new-comment" class="m-2" rows="2" placeholder="Add a comment">
         </textarea>
-        <button type="submit" class="btn">Submit</button>
+        <div class="m-4 d-flex justify-content-center">
+            <button type="submit" class="btn nav text-light">Submit</button>
+        </div>
     </form>
     {{/if}}
 
-    <h2>Comments:</h2>
+    <h2 class="d-flex justify-content-center">Comments:</h2>
     {{#each comments}}
-    <div class="comment">
-        <p>{{content}}</p>
-        <p>By: {{user.username}} at {{format_date createAt}}</p>
+    <div class="col-md-3 m-4 card text-dark">
+        <div class="comment">
+            <p class="m-2">{{content}}</p>
+            <p class="m-2">By: {{user.username}} at {{format_date createdAt}}</p>
+        </div>
     </div>
     {{/each}}
 

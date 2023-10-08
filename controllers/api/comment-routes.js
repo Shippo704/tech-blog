@@ -8,7 +8,8 @@ router.post('/', loggedIn, async (req, res) => {
     try {
         // create a new comment with req body data
         const comment = await Comment.create({
-            ...req.body,
+            content: req.body.content,
+            post_id: req.body.post_id,
             // user_id is the logged in user's id
             user_id: req.session.user_id
         });

@@ -1,9 +1,12 @@
+//get postId from window params
+const postId = parseInt(window.location.pathname.split('/').pop());
+
 // function for new comment form
 const newCommentFormHandler = async (event) => {
     event.preventDefault();
 
-    //get post_id to attach comment
-    const postId = parseInt(window.location.pathname.split('/').pop());
+    // //get post_id to attach comment
+    // const postId = parseInt(window.location.pathname.split('/').pop());
 
     const content = document.querySelector('#new-comment').value.trim();
 
@@ -11,8 +14,8 @@ const newCommentFormHandler = async (event) => {
     if (content) {
         const response = await fetch('/api/comments', {
             method: 'POST',
-            body: JSON.stringify({content, postId}),
-            headers: {'Content-Type': 'application/json'}
+            body: JSON.stringify({content: content, post_id: postId}),
+            headers: { 'Content-Type': 'application/json' },
         });
 
         // return to homepage if new comment posted successfully
@@ -28,4 +31,4 @@ const newCommentFormHandler = async (event) => {
 // add event listener to comment form submit button
 document
 .querySelector('.comment-form')
-.addEventListener('sumbit', newCommentFormHandler);
+.addEventListener('submit', newCommentFormHandler);

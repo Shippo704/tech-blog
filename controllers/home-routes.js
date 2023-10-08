@@ -108,7 +108,7 @@ router.get('/post/:id', loggedIn, async (req, res) => {
         // render the post page
         res.render('post', {
             ...post,
-            logged_in: req.session.loggedIn
+            loggedIn: req.session.loggedIn
         });
     }
     // catch all errors
