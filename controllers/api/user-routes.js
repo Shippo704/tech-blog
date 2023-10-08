@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.loggedIn = true;
 
-            res.json({userData, message: 'Login successful'})
+            res.json({user: userData, message: 'Login successful'})
         });
     }
     // catch all errors
@@ -82,7 +82,7 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
     try {
         // if a user is logged in
-        if (res.session.loggedIn) {
+        if (req.session.loggedIn) {
             // delete session to log them out
             req.session.destroy(() => {
                 res.status(204).end();

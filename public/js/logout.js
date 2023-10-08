@@ -2,7 +2,7 @@
 const logoutHandler = async () => {
     const response = await fetch('/api/users/logout', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'}
+        headers: { 'Content-Type': 'application/json' },
     });
 
     // return to homepage on successful logout

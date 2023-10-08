@@ -10,7 +10,7 @@ const loginFormHandler = async (event) => {
         const response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({username, password}),
-            headers: {'Content-Type': 'application/json'}
+            headers: { 'Content-Type': 'application/json' },
         });
 
         // return to homepage on successful login
@@ -25,5 +25,5 @@ const loginFormHandler = async (event) => {
 
 // add event listener to login form submit button
 document
-.querySelector('loginForm')
+.querySelector('.loginForm')
 .addEventListener('submit', loginFormHandler);
