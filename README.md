@@ -63,6 +63,6 @@ Here is a video walkthrough:
 
 GitHub Repo: https://github.com/Shippo704/tech-blog
 
-Deployed App: 
+Deployed App: https://shielded-plains-25345-ef4b62337814.herokuapp.com/
 
 Walkthrough Video: https://drive.google.com/file/d/13MH2un6tm4R0933y5ZKTtiLTuIWz_Ua-/view
