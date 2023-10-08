@@ -117,5 +117,59 @@ router.get('/post/:id', loggedIn, async (req, res) => {
     }
 });
 
+// GET the newpost page
+router.get('/newpost',  (req, res) => {
+    try {
+        // take to newpost page if logged in
+        if (loggedIn) {
+            res.render('newpost');
+            return;
+        }
+        // otherwise bring to login page
+        res.redirect('/login');
+    }
+    // catch all errors
+    catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+// GET the editpost page
+router.get('/editpost/:id', async (req, res) => {
+    try {
+        // find post by req params id
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ["username"]
+                },
+                {
+                    model: Comment,
+                    include: [
+                        {
+                            model: User,
+                            attributes: ["username"]
+                        }
+                    ]
+                }
+            ]
+        });
+
+        // convert to plain JS object
+        const post = postData.get({plain: true});
+
+        // render editpost page
+        res.render('editpost', {
+            ...post,
+            loggedIn: req.session.loggedIn
+        });
+    }
+    // catch all errors
+    catch (error) {
+        res.status(500).json(error);
+    }
+});
+
 module.exports = router
 
