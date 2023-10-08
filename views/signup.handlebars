@@ -1,18 +1,29 @@
 <main>
-    <h1>Sign Up</h1>
+    <h1 class="d-flex justify-content-center">Sign Up</h1>
     <form class="signupForm">
-        <label for="username-signup" class="label">Username: </label>
-        <input id="username-signup" type="text" placeholder="Enter Username">
-        <label for="email-signup" class="label">Email: </label>
-        <input id="email-signup" type="text" placeholder="Enter Email">
-        <label for="password-signup" class="label">Password: </label>
-        <input id="password-signup" type="password" placeholder="Password must be at least 5 characters long">
+        <div class="m-4 d-flex justify-content-center">
+            <label for="username-signup" class="label">Username: </label>
+            <input id="username-signup" type="text" placeholder="Enter Username">
+        </div>
 
-        <button type="submit" class="btn">Submit</button>
+        <div class="m-4 d-flex justify-content-center">
+            <label for="email-signup" class="label">Email: </label>
+            <input id="email-signup" type="text" placeholder="Enter Email">
+        </div>
+
+        <div class="m-4 d-flex justify-content-center">
+            <label for="password-signup" class="label">Password: </label>
+            <input id="password-signup" type="password" placeholder="Password must be at least 5 characters long">
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn text-light nav">Submit</button>
+        </div>
+
     </form>
 
-    <div>
-        <p>Already have an account? <a href='/login'>Login</a></p>
+    <div class="d-flex justify-content-center">
+        <p>Already have an account? <a href='/login' class="nav btn text-light">Login</a></p>
     </div>
 
 </main>
