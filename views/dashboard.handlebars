@@ -1,18 +1,28 @@
 <main>
     <div class="row">
-        <div class="col-12">
-            <h1>Dashboard</h1>
-            <a href="/newpost" class="btn">Create New Post</a>
+        <div class="">
+            <h1 class="d-flex justify-content-center">Dashboard</h1>
+            <div class="d-inline-flex p-2">
+                <a href="/newpost" class="btn nav text-light">Create New Post</a>
+            </div>
         </div>
     </div>
 
-    <h1>My Posts:</h1>
+    <h1 class="d-flex justify-content-center">My Posts:</h1>
     {{#each posts}}
-        <div class="post">
-            <h2><a href="/post/{{id}}">{{title}}</a></h2>
-            <p>Created By: {{user.username}} at {{format_date createdAt}}</p>
-            <a href="editpost/{{id}}" class="btn">Edit Post</a>
-            <button class="btn" postId="{{id}}">Delete</button>
+        <div class="col-md-3 m-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-center">
+                    <h2 class="card-title"></h2>
+                    <a href="/post/{{id}}" class="title btn text-dark">{{title}}</a>
+                </div>
+
+                <div class="card-body text-dark">
+                    <p>{{content}}</p>
+                    <p>Created By: {{user.username}} at Date: {{format_date createdAt}}</p>
+                </div>
+            </div>
+
         </div>
     {{/each}}
 </main>
