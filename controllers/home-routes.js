@@ -12,17 +12,17 @@ router.get('/', async (req, res) => {
                 {
                     model: User,
                     attributes: ["username"]
-                } 
+                }
             ]
         });
 
         // convert post data into plain JS object
         const posts = postData.map((post) => post.get({plain:true}));
 
-        // render dashboard with all posts
-        res.render('dashboard', {
+        // render homepage with all posts
+        res.render('homepage', {
             posts,
-            loggedIn: req.session.loggedIn
+            logged_in: req.session.logged_in
         });
     }
     // catch all errors
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET dashboard page
-router.get('./dashboard', loggedIn, async (req, res) => {
+router.get('/dashboard', loggedIn, async (req, res) => {
     try {
         // find all posts by the user
         const postData = await Post.findAll({
@@ -51,9 +51,9 @@ router.get('./dashboard', loggedIn, async (req, res) => {
         const posts = postData.map((post) => post.get({plain: true}));
 
         // render dashboard with all posts by user
-        res.render('./dashboard', {
+        res.render('dashboard', {
             posts,
-            loggedIn: req.session.loggedIn
+            logged_in: req.session.logged_in
         });
     }
     // catch all errors
@@ -63,10 +63,10 @@ router.get('./dashboard', loggedIn, async (req, res) => {
 });
 
 // GET login page
-router.get('./login', (req, res) => {
+router.get('/login', (req, res) => {
     // render login page
     res.render('login', {
-        loggedIn: req.session.loggedIn
+        logged_in: req.session.logged_in
     });
 });
 
@@ -74,7 +74,7 @@ router.get('./login', (req, res) => {
 router.get('./signup', (req, res) => {
     // render signup page
     res.render('signup', {
-        loggedIn: req.session.loggedIn
+        logged_in: req.session.logged_in
     });
 });
 
@@ -108,7 +108,7 @@ router.get('/post/:id', loggedIn, async (req, res) => {
         // render the post page
         res.render('post', {
             ...post,
-            loggedIn: req.session.loggedIn
+            logged_in: req.session.logged_in
         });
     }
     // catch all errors

@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 // GET one post by id
 // include associated username
 // include associated comments and their associated usernames
-router.get('./:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const post = await Post.findByPk(
             req.params.id,
@@ -65,7 +65,7 @@ router.get('./:id', async (req, res) => {
 });
 
 // POST/CREATE new post with loggedIn user
-router.post('./', loggedIn, async (req, res) => {
+router.post('/', loggedIn, async (req, res) => {
     try {
         // create a new post
         const newPost = await Post.create({
@@ -85,7 +85,7 @@ router.post('./', loggedIn, async (req, res) => {
 });
 
 // UPDATE/PUT a post by id with loggedIn user
-router.put('./:id', loggedIn, async (req, res) => {
+router.put('/:id', loggedIn, async (req, res) => {
     try {
         // update a post with req body data
         const updatePost = await Post.update(req.body, {
@@ -111,7 +111,7 @@ router.put('./:id', loggedIn, async (req, res) => {
 });
 
 // DELETE/DESTROY a post by id with loggedIn user
-router.delete('./:id', loggedIn, async (req, res) => {
+router.delete('/:id', loggedIn, async (req, res) => {
     try {
         // find and destroy all associated comments
         await Comment.destroy({

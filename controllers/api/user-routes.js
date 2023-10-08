@@ -25,7 +25,7 @@ router.post('/signup', async (req, res) => {
 
         // save the session and automatically log in the new user
         req.session.save(() => {
-            req.session.user_id = newUser.isSoftDeleted;
+            req.session.user_id = newUser.id;
             req.session.loggedIn = true;
 
             res.status(200).json(newUser);
@@ -38,7 +38,7 @@ router.post('/signup', async (req, res) => {
 });
 
 // POST/CREATE new user session for login
-router.post('./login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         // find the data for the user who is trying to log in
         const userData = await User.findOne({
@@ -67,7 +67,7 @@ router.post('./login', async (req, res) => {
         // save the session with the user logged in
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.loggedIn = true;
+            req.session.logged_in = true;
 
             res.json({userData, message: 'Login successful'})
         });
@@ -79,7 +79,7 @@ router.post('./login', async (req, res) => {
 });
 
 // POST/CREATE session logout for user
-router.post('./logout', (req, res) => {
+router.post('/logout', (req, res) => {
     try {
         // if a user is logged in
         if (res.session.loggedIn) {
