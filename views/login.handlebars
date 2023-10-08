@@ -1,15 +1,22 @@
 <main>
-    <h1>Login</h1>
+    <h1 class="d-flex justify-content-center">Login</h1>
     <form class="loginForm">
-        <label for="username" class="label">Username: </label>
-        <input id="username" type="text" placeholder="Enter Username">
-        <label for="password" lass="label">Password: </label>
-        <input id="password" type="password" placeholder="Enter Password">
-        <button onclick="login" id="loginButton">Login</button>
+        <div class="m-4 d-flex justify-content-center">
+            <label for="username" class="label m-2">Username: </label>
+            <input id="username" type="text" placeholder="Enter Username">
+        </div>
+        <div class="m-4 d-flex justify-content-center">
+            <label for="password" class="label m-2">Password: </label>
+            <input id="password" type="password" placeholder="Enter Password">
+        </div>
+        <div class="m-4 d-flex justify-content-center">
+             <button onclick="login" id="loginButton" class="nav">Login</button>
+        </div>
+       
     </form>
 
-    <div>
-        <p>New here? <a href="/signup">Sign Up</a></p>
+    <div class="d-flex justify-content-center">
+        <p>New here? <a href="/signup" class="nav btn text-light">Sign Up</a></p>
     </div>
 
 </main>

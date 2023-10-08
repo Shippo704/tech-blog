@@ -6,3 +6,15 @@
 .title:hover {
     border: 2px solid #60B;
 }
+
+.card{
+    border: 5px solid #60B;
+}
+
+form {
+    border: 5px solid #60B;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
