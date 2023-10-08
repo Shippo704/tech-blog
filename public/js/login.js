@@ -7,7 +7,7 @@ const loginFormHandler = async (event) => {
 
     // makes sure all fields are filled in
     if (username && password) {
-        const response = await fetch('/login', {
+        const response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({username, password}),
             headers: {'Content-Type': 'application/json'}
@@ -26,4 +26,4 @@ const loginFormHandler = async (event) => {
 // add event listener to login form submit button
 document
 .querySelector('loginForm')
-.addEventListener('sumbit', loginFormHandler);
+.addEventListener('submit', loginFormHandler);

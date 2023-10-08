@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
         // render homepage with all posts
         res.render('homepage', {
             posts,
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
     }
     // catch all errors
@@ -53,7 +53,7 @@ router.get('/dashboard', loggedIn, async (req, res) => {
         // render dashboard with all posts by user
         res.render('dashboard', {
             posts,
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
     }
     // catch all errors
@@ -66,7 +66,7 @@ router.get('/dashboard', loggedIn, async (req, res) => {
 router.get('/login', (req, res) => {
     // render login page
     res.render('login', {
-        logged_in: req.session.logged_in
+        loggedIn: req.session.loggedIn
     });
 });
 
@@ -74,7 +74,7 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     // render signup page
     res.render('signup', {
-        logged_in: req.session.logged_in
+        loggedIn: req.session.loggedIn
     });
 });
 
@@ -108,7 +108,7 @@ router.get('/post/:id', loggedIn, async (req, res) => {
         // render the post page
         res.render('post', {
             ...post,
-            logged_in: req.session.logged_in
+            logged_in: req.session.loggedIn
         });
     }
     // catch all errors

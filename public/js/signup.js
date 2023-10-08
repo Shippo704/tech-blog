@@ -8,10 +8,10 @@ const signupFormHandler = async (event) => {
 
     // make sure that all fields are filled in
     if (username && email && password) {
-        const response = await fetch('./signup', {
+        const response = await fetch('/api/users/signup', {
             method: 'POST',
-            body: JSON/stringify({username, email, password}),
-            headers: {'Content-Type': 'application/json'}
+            body: JSON.stringify({username, email, password}),
+            headers: { 'Content-Type': 'application/json' },
         });
 
         // return to homepage on successful signup
